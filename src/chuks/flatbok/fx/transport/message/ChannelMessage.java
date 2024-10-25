@@ -30,7 +30,7 @@ public class ChannelMessage{
           return this;
     }
     
-    public String getResquestResponseIdentifier(){
+    public String getIdentifier(){
         return resquestResponseIdentifier;
     }
     

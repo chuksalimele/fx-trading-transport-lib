@@ -26,7 +26,7 @@ public class ChannelMessageEncoder extends MessageToMessageEncoder<ChannelMessag
         buffer.writeByte(msg.getType().getValue());
         
         //write length of request-response-identifier
-        String identifier = msg.getResquestResponseIdentifier();
+        String identifier = msg.getIdentifier();
         
         if(identifier != null && !identifier.isEmpty()){
             buffer.writeInt(identifier.length());

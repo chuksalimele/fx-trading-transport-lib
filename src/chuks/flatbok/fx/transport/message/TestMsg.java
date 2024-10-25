@@ -25,7 +25,7 @@ public class TestMsg {
         buffer.writeByte(msg.getType().getValue());
         
         //write length of request-response-identifier
-        String identifier = msg.getResquestResponseIdentifier();
+        String identifier = msg.getIdentifier();
         
         if(identifier != null && !identifier.isEmpty()){
             buffer.writeInt(identifier.length());
@@ -549,7 +549,7 @@ public class TestMsg {
         System.out.println(decoded_msg.getInt(7));
         System.out.println(decoded_msg.getBoolean(8));
         System.out.println(decoded_msg.getBooleanArray(10)[1]);
-        System.out.println(decoded_msg.getResquestResponseIdentifier());
+        System.out.println(decoded_msg.getIdentifier());
         
     }
 }
