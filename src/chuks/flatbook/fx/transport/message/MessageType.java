@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Enum.java to edit this template
  */
-package chuks.flatbok.fx.transport.message;
+package chuks.flatbook.fx.transport.message;
 
 /**
  *
@@ -90,11 +90,14 @@ public enum MessageType {
     WARN_LOGS((byte) 0x75), 
     DEBUG_LOGS((byte) 0x76),
     ERROR_LOGS((byte) 0x77), 
-    MAX_CONNECTION_PER_IP((byte) 0x78),     
-    MAX_REQUEST_PER_SECOND_PER_IP((byte) 0x79), 
-    REQUEST_FAILED((byte) 0x80), 
-    PAGINATED_ADMIN_LIST((byte) 0x81),    
-    ORDER_NOT_AVAILABLE((byte) 0x82),    
+    TRACE_LOGS((byte) 0x78), 
+    REJECTED_IPS_LOGS((byte) 0x79), 
+    SUSPICIOUS_IPS_LOGS((byte) 0x80),     
+    MAX_CONNECTION_PER_IP((byte) 0x81),     
+    MAX_REQUEST_PER_SECOND_PER_IP((byte) 0x82), 
+    REQUEST_FAILED((byte) 0x83), 
+    PAGINATED_ADMIN_LIST((byte) 0x84),    
+    ORDER_NOT_AVAILABLE((byte) 0x85),    
     
     ;
 

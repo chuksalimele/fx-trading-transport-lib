@@ -2,10 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package chuks.flatbok.fx.transport.message.crack;
+package chuks.flatbook.fx.transport.message.crack;
 
-import chuks.flatbok.fx.transport.message.ChannelMessage;
-import chuks.flatbok.fx.transport.message.VarType;
+import chuks.flatbook.fx.transport.message.ChannelMessage;
+import chuks.flatbook.fx.transport.message.VarType;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import java.util.List;

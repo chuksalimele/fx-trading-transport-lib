@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package chuks.flatbok.fx.transport.message;
+package chuks.flatbook.fx.transport.message;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
