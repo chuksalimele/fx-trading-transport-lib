@@ -38,74 +38,77 @@ public class ChannelMessage{
         return type;
     }
     
+    private boolean outOfRange(int index){
+        return index < 0 || index > arguments.length -1;
+    }
     
     public int argumentsCount(){
         return arguments.length;
     }
     
     public boolean isByte(int argument_index){
-        return arguments[argument_index] instanceof Byte;
+        return !outOfRange(argument_index) && arguments[argument_index] instanceof Byte;
     }
     
     public boolean isChar(int argument_index){
-        return arguments[argument_index] instanceof Character;
+        return !outOfRange(argument_index) && arguments[argument_index] instanceof Character;
     }
     
     public boolean isInt(int argument_index){
-        return arguments[argument_index] instanceof Integer;
+        return !outOfRange(argument_index) && arguments[argument_index] instanceof Integer;
     }
     
     public boolean isLong(int argument_index){
-        return arguments[argument_index] instanceof Long;
+        return !outOfRange(argument_index) && arguments[argument_index] instanceof Long;
     }
         
     public boolean isFloat(int argument_index){
-        return arguments[argument_index] instanceof Float;
+        return !outOfRange(argument_index) && arguments[argument_index] instanceof Float;
     }
     
     public boolean isDouble(int argument_index){
-        return arguments[argument_index] instanceof Double;
+        return !outOfRange(argument_index) && arguments[argument_index] instanceof Double;
     }
     
     public boolean isString(int argument_index){
-        return arguments[argument_index] instanceof String;
+        return !outOfRange(argument_index) && arguments[argument_index] instanceof String;
     }
     
     
     public boolean isByteArray(int argument_index){
-        return arguments[argument_index] instanceof byte[];
+        return !outOfRange(argument_index) && arguments[argument_index] instanceof byte[];
     }
     
     public boolean isCharArray(int argument_index){
-        return arguments[argument_index] instanceof char[];
+        return !outOfRange(argument_index) && arguments[argument_index] instanceof char[];
     }
     
     public boolean isBooleanArray(int argument_index){
-        return arguments[argument_index] instanceof boolean[];
+        return !outOfRange(argument_index) && arguments[argument_index] instanceof boolean[];
     }
         
     public boolean isShortArray(int argument_index){
-        return arguments[argument_index] instanceof short[];
+        return !outOfRange(argument_index) && arguments[argument_index] instanceof short[];
     }
         
     public boolean isIntArray(int argument_index){
-        return arguments[argument_index] instanceof int[];
+        return !outOfRange(argument_index) && arguments[argument_index] instanceof int[];
     }
         
     public boolean isLongArray(int argument_index){
-        return arguments[argument_index] instanceof long[];
+        return !outOfRange(argument_index) && arguments[argument_index] instanceof long[];
     }
     
     public boolean isFloatArray(int argument_index){
-        return arguments[argument_index] instanceof float[];
+        return !outOfRange(argument_index) && arguments[argument_index] instanceof float[];
     }
     
     public boolean isDoubleArray(int argument_index){
-        return arguments[argument_index] instanceof double[];
+        return !outOfRange(argument_index) && arguments[argument_index] instanceof double[];
     }
     
     public boolean isStringArray(int argument_index){
-        return arguments[argument_index] instanceof String[];
+        return !outOfRange(argument_index) && arguments[argument_index] instanceof String[];
     }
         
     public byte getByte(int argument_index) {

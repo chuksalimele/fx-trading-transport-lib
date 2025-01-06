@@ -98,7 +98,7 @@ public enum MessageType {
     REQUEST_FAILED((byte) 0x83), 
     PAGINATED_ADMIN_LIST((byte) 0x84),    
     ORDER_NOT_AVAILABLE((byte) 0x85),    
-    
+    SIGN_UP_INITIATED((byte) 0x86),    
     ;
 
     private final byte value;
