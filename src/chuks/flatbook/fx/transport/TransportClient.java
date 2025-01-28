@@ -87,13 +87,20 @@ public abstract class TransportClient extends Thread {
 
         return SslContextBuilder.forClient().trustManager(trustManagerFactory).build();
     }
+    
+    void onAttemptConnectFail(String message_prefix, Throwable cause){
+          connected = false;
+          System.err.println(cause == null? message_prefix : message_prefix +": " + cause.getMessage());
+          retryConnection(); // Retry on connection failure
+    }
 
+    @SuppressWarnings("UseSpecificCatch")
     public void connectToServer() {
-        if (sheduleConn != null) {
-            sheduleConn.cancel(true);
-        }
 
         if (connected) {
+            if (sheduleConn != null) {
+                sheduleConn.cancel(true);
+            }            
             return;
         }
 
@@ -120,6 +127,7 @@ public abstract class TransportClient extends Thread {
                     });
 
             // Try to connect and store channel reference
+            
             ChannelFuture future = b.connect(host, port).sync();
             channel = future.channel(); // Store the channel for future management
 
@@ -132,23 +140,17 @@ public abstract class TransportClient extends Thread {
                     onConnected();
                     attempt = 0;
                 } else {
-                    connected = false;
-                    System.err.println("Connection failed: " + f.cause().getMessage());
-                    retryConnection(); // Retry on connection failure
+                    onAttemptConnectFail("Connection failed",f.cause());
                 }
             });
 
             // Use a listener to handle channel closure
             channel.closeFuture().addListener(f -> {
-                connected = false;
-                System.out.println("Connection closed. Checking connection again...");
-                retryConnection(); // Retry upon disconnection
+                onAttemptConnectFail("Connection closed. Checking connection again...",null);
             });
 
-        } catch (InterruptedException ex) {
-            connected = false;
-            System.err.println("Connection attempt failed: " + ex.getMessage());
-            retryConnection(); // Retry in case of failure
+        } catch (Exception ex) {
+            onAttemptConnectFail("Connection attempt failed",ex);
         }
     }
 
